@@ -8,7 +8,7 @@
         <version>2.4.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.yysoul</groupId>
+    <groupId>com.sc</groupId>
     <artifactId>springboottest</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboottest</name>
@@ -44,6 +44,8 @@
     </dependencies>
 
     <build>
+        <outputDirectory>${project.basedir}/build</outputDirectory>
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -57,7 +59,14 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.6.13</version>
+            </plugin>
         </plugins>
     </build>
+
+
 
 </project>

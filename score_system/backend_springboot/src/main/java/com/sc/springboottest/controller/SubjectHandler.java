@@ -19,6 +19,7 @@ public class SubjectHandler {
     // Method to retrieve all subjects with pagination
     @GetMapping("/findAll/{page}/{size}")
     public Page<Subject> findAll(@PathVariable("page") Integer page, @PathVariable("size") Integer size) {
+        System.out.println("running************************");
         if (page < 1) {
             return null; // Return null if page number is invalid
         }
@@ -30,6 +31,7 @@ public class SubjectHandler {
     // Method to save a new subject
     @PostMapping("/save")
     public String save(@RequestBody Subject subject) {
+        System.out.println("running************************");
         Subject result = subjectRepository.save(subject); // Save the subject
         if(result != null) {
             return "success"; // Return success message if subject saved successfully

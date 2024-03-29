@@ -48,7 +48,7 @@
                               this.$router.push('/Subject_Manager')
                             }
                         });
-                        axios.post('http://localhost:8181/subject/save', this.ruleForm).then(function(resp){
+                        axios.post('http://192.168.91.102:30002/subject/save', this.ruleForm).then(function(resp){
                             console.log(resp) //callback
                         })
                     } else {

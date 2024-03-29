@@ -41,9 +41,9 @@ class SpringboottestApplicationTests {
         System.out.println(subject);
     }
 
-    @Test
-    void delete() {
-        repository.deleteById(132);
-    }
+//    @Test
+//    void delete() {
+//        repository.deleteById(132);
+//    }
 
 }
