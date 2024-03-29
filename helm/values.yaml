@@ -1,0 +1,62 @@
+# Default values for myapp.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 
+  api: 1
+  front: 1
+  mysql: 1
+
+images:
+  front: kaychen2023/front:19230002
+  api: kaychen2023/api:latest
+  mysql: kaychen2023/db:latest
+
+containerPort:
+  api: 8081
+  front: 80
+  mysql: 3306
+
+port:
+  api: 8081
+  front: 80
+  mysql: 3306
+
+
+targetPort:
+  api: 8081
+  front: 80
+
+nodePort:
+  api: 30002
+  front: 30003
+
+protocol:
+  api: TCP
+  front: TCP
+  mysql: TCP
+
+portType:
+  api: NodePort
+  front: NodePort
+  mysql: ClusterIP
+
+database:
+  user: root
+  rootPassword: root
+  databaseName: sc_score_system
+  matchLabels: api-service
+  MYSQL_ROOT_PASSWORD: cm9vdA==
+
+PersistentVolume:
+  path: /mnt/data1
+  persistentVolumeReclaimPolicy: Retain
+  storage: 2Gi
+  accessModes: ReadWriteOnce
+
+PVclaim:
+  accessModes: ReadWriteOnce
+  storage: 1Gi
+  storageClassName: hostpath
+
+

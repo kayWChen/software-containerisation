@@ -1,11 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    name: front-service
-  name: front-service
+  name: {{ .Release.Name }}-front
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount.front }}
   selector:
     matchLabels:
       app: front-service
@@ -16,7 +14,7 @@ spec:
     spec:
       containers:
       - name: front-service
-        image: kaychen2023/front:19230002
+        image: {{.Values.images.front}}
        # ports:
-       # - containerPort: 80
+       # - containerPort: {{.Values.containerPort.front}}
 

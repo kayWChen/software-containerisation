@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-service
+  name: {{ .Release.Name }}-api
 spec:
-  replicas: 1
+  replicas:  {{ .Values.replicaCount.api }}
   selector:
     matchLabels:
       app: api-service
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: api-service
-        image: kaychen2023/api:latest
+        image: {{ .Values.images.api }}
         ports:
-        - containerPort: 8081
+        - containerPort: {{.Values.containerPort.api}}

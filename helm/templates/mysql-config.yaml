@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-config
+  labels:
+    app: mysql
+data:
+  MYSQL_DATABASE: {{ .Values.database.databaseName }}
+  MYSQL_USER: {{ .Values.database.user }}
+  # MYSQL_ROOT_PASSWORD: "root"

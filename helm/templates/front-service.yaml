@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-front
+spec:
+  selector:
+    app: front-service
+  ports:
+  - protocol: {{ .Values.protocol.front }}
+    port: {{ .Values.port.front }}
+    targetPort: {{ .Values.targetPort.front }}
+    nodePort: {{ .Values.nodePort.front }}
+  type: {{ .Values.portType.front }}

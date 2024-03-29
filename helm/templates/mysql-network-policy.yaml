@@ -12,7 +12,7 @@ spec:
   - from:
     - podSelector:
         matchLabels:
-          app: api-service
+          app: {{.Values.database.matchLabels}}
     ports:
-    - protocol: TCP
-      port: 3306
+    - protocol: {{.Values.protocol.mysql}}
+      port:  {{.Values.port.mysql}}

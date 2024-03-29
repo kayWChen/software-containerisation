@@ -10,6 +10,6 @@ spec:
   capacity:
     storage: 2Gi
   persistentVolumeReclaimPolicy: Retain
-  # gcePersistentDisk:
-  #   pdName: your-persistent-disk-name
+  hostPath:
+    path: /mnt/data1
   
