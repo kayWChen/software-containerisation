@@ -51,7 +51,7 @@
             page(currentPage){
                 // alert(currentPage)
                 const _this = this
-                axios.get('http://api-service:8081/subject/findAll/'+currentPage+'/6').then(function (resp) {  //resp is the result
+                axios.get('http://192.168.91.103:8081/subject/findAll/'+currentPage+'/6').then(function (resp) {  //resp is the result
                     _this.tableData = resp.data.content
                     _this.total = resp.data.totalElements
                 })
@@ -60,7 +60,7 @@
         created() {
             // alert(1)
             const _this = this
-            axios.get('http://api-service:8081/subject/findAll/1/6').then(function (resp) {
+            axios.get('http://192.168.91.103:8081/subject/findAll/1/6').then(function (resp) {
                 // console.log(resp.data)
                 _this.tableData = resp.data.content
                 _this.total = resp.data.totalElements

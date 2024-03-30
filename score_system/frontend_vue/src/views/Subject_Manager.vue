@@ -57,7 +57,7 @@
 
             deleteSubject(row) {
                 const _this = this
-                axios.delete('http://api-service:8081/subject/deleteById/' + row.id).then(function (resp){
+                axios.delete('http://192.168.91.103:8081/subject/deleteById/' + row.id).then(function (resp){
                     console.log(resp)
                     _this.$alert('The subject ' + row.name + ' has been successfully deleted in the system!'
                         , 'Congratulation!', {
@@ -71,7 +71,7 @@
 
             page(currentPage){
                 const _this = this
-                axios.get('http://api-service:8081/subject/findAll/'+currentPage+'/6').then(function (resp) {
+                axios.get('http://192.168.91.103:8081/subject/findAll/'+currentPage+'/6').then(function (resp) {
                     _this.tableData = resp.data.content
                     _this.total = resp.data.totalElements
                 })
@@ -79,7 +79,7 @@
         },
         created() {
             const _this = this
-            axios.get('http://api-service:8081/subject/findAll/1/6').then(function (resp) {
+            axios.get('http://192.168.91.103:8081/subject/findAll/1/6').then(function (resp) {
                 _this.tableData = resp.data.content
                 _this.total = resp.data.totalElements
             })

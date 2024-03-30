@@ -52,7 +52,7 @@
                                     this.$router.push('/Subject_Manager')
                                 }
                             });
-                        axios.put('http://api-service:8081/subject/update', this.ruleForm).then(function (resp) {
+                        axios.put('http://192.168.91.103:8081/subject/update', this.ruleForm).then(function (resp) {
                             console.log(resp)
                         })
                     } else {
@@ -68,7 +68,7 @@
         created() {
 
             const _this = this
-            axios.get('http://api-service:8081/subject/findById/' + this.$route.query.id).then(function (resp) {
+            axios.get('http://192.168.91.103:8081/subject/findById/' + this.$route.query.id).then(function (resp) {
                 _this.ruleForm = resp.data
             })
         }

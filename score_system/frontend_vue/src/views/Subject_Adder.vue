@@ -48,7 +48,7 @@
                               this.$router.push('/Subject_Manager')
                             }
                         });
-                        axios.post('http://api-service:8081/subject/save', this.ruleForm).then(function(resp){
+                        axios.post('http://192.168.91.103:8081/subject/save', this.ruleForm).then(function(resp){
                             console.log(resp) //callback
                         })
                     } else {

@@ -1,11 +1,16 @@
+
+
 # Software Containerization
+
 ### Assignment Description:
 
-In this assignment, I've developed a simplified score system capable of recording scores for various subjects. Basic creating, reading, updating, deleting operations are all supported in the system. I attempt to deploy the system Docker Compose, Kubernetes, and Helm charts.
+In this assignment, I've developed a simplified score system (with restful api) capable of recording scores for various courses. Basic creating, reading, updating, deleting operations are all supported in the system. I attempt to deploy the system with Docker Compose, Kubernetes, and Helm charts.
 
-#### Application Basic Information:
 
-**Frontend:**  `Vue.js` @2.6.12 , `Nginx` @ 1.24.0
+
+#### Application Basic Structure:
+
+**Frontend:**  `Vue.js` @2.6.12 ,  **Web Server:** `Nginx` @ 1.24.0
 
 **Backend:** `SpringBoot` @2.4.5
 
@@ -15,7 +20,7 @@ In this assignment, I've developed a simplified score system capable of recordin
 
 ![1711742664137](C:\Users\81903\Desktop\课程目录\sc\new project\assets\1711742664137.png)
 
-#### Containerization:
+#### Containerization Tools:
 
 `Docker` @ 25.0.1
 
@@ -23,7 +28,9 @@ In this assignment, I've developed a simplified score system capable of recordin
 
 `Helm` @ 3.14.3
 
-### Documents:
+
+
+### Directories&Files:
 
 `score_system`: includes the source code of the restful web application (frontend, backend, database);
 
@@ -32,6 +39,8 @@ In this assignment, I've developed a simplified score system capable of recordin
 `k8s`: includes Kubernetes yamls to deploy the system in local clusters. Here I add a simple script `deploy-local.sh` to help running the commands needed in deploying.
 
 `helm`: includes the helm charts to run the application.    
+
+
 
 ### Commands:
 
@@ -71,6 +80,8 @@ docker rmi front-images
 ```
 
 #### Kubernetes:
+
+I present these commands with a script.
 
 To start a service:
 
@@ -129,5 +140,20 @@ helm upgrade scoresys ./helm --set images.front=kaychen2023/front:latest \
 --set images.api=kaychen2023/api:latest
 ```
 
+**TODO**：there is still some problem with backend (``Crashbackof`f sometimes) in the deployment of Helm Chart.
 
+#### GKE
 
+To deploy:
+
+```shell
+kubectl apply -f api-deployment.yaml
+kubectl apply -f api-service.yaml
+```
+
+```shell
+kubectl delete deployment --all 
+kubectl delete service --all 
+```
+
+**TODO：**there is still some problem with the connection between pods in GKE environment.

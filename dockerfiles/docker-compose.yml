@@ -23,10 +23,10 @@ services:
      # - MYSQL_DATABASE=sc_score_system
    # command: bash -c "mysql -u root -prootpassword sc_score_system < ./data.sql"
 
-scoresys:
+  scoresys:
     image: scoresys:latest
     restart: always
-    build: .
+    build: ./backend
     ports:
     - 8081:8081
     depends_on:

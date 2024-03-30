@@ -5,11 +5,12 @@ metadata:
   labels:
     pv: pv-test
 spec:
+  storageClassName: manual
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   capacity:
     storage: 2Gi
-  persistentVolumeReclaimPolicy: Retain
+  # persistentVolumeReclaimPolicy: Retain
   hostPath:
     path: /mnt/data1
   
