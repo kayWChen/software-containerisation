@@ -16,9 +16,9 @@ In this assignment, I've developed a simplified score system (with restful api) 
 
 **Database:** `Mysql` @5.7.27
 
- ![1711742624356](C:\Users\81903\Desktop\课程目录\sc\new project\assets\1711742624356.png)
+ ![1711742624356](.\assets\1711742624356.png)
 
-![1711742664137](C:\Users\81903\Desktop\课程目录\sc\new project\assets\1711742664137.png)
+![1711742664137](.\assets\1711742664137.png)
 
 #### Containerization Tools:
 
