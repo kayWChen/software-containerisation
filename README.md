@@ -36,7 +36,7 @@ In this assignment, I've developed a simplified score system (with restful api) 
 
 `dockfile`: includes dockerfiles and packages which need to be contained in the containers. The docker images have also been pushed to repos. There is also a `docker-compose.yaml` to deploy the whole web application in local environment.
 
-`k8s`: includes Kubernetes yamls to deploy the system in local clusters. Here I add a simple script `deploy-local.sh` to help running the commands needed in deploying. The directory also contains yamls to deploy TLS for the application.  
+`k8s`: includes Kubernetes yamls to deploy the system in local clusters. Here I add a simple script `deploy-local.sh` to help running the commands needed in deploying. The directory also contains yamls to deploy TLS and RBAC for the application.  
 
 `helm`: includes the helm charts to run the application.    
 
