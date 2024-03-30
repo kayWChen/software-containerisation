@@ -1,0 +1,14 @@
+apiVersion: rbac.authorization.k8s.io/v1
+# This role binding allows user to have maximum authority in the "default" namespace.
+kind: RoleBinding
+metadata:
+  name: superuser
+  namespace: default
+subjects:
+- kind: User
+  name: kay 
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: superuser
+  apiGroup: rbac.authorization.k8s.io
