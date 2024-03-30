@@ -1,20 +1,29 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress
+  name: scoresys-ingress
 
 spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - scoresys.com
+    secretName: scoresys-tls
   rules:
-    - host: scoresys.com
-      http:
-        paths:
-          - path: /api
-            pathType: Prefix
-            backend:
-              serviceName: api-service
-              servicePort: 8081
-          - path: /
-            pathType: Prefix
-            backend:
-              serviceName: front-service
-              servicePort: 80
+  - host: scoresys.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: front-service
+            port:
+              number: 80
+      - path: /back
+        pathType: Prefix
+        backend:
+          service:
+            name: api-service
+            port:
+              number: 8081
